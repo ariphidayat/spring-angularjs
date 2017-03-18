@@ -78,7 +78,7 @@ angular.module('hello', [ 'ngRoute' ])
 
     .controller('home', function($http) {
         var self = this;
-        $http.get('hello/').then(function (response) {
+        $http.get('http://localhost:8081/hello/').then(function (response) {
             self.greeting = response.data;
     })
 });
