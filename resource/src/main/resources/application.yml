@@ -1,2 +1,15 @@
 server :
   port : 8081
+
+security:
+  sessions: NEVER
+
+spring:
+  session:
+    store-type: redis
+
+logging:
+  level:
+    org.springframework:
+      security: DEBUG
+      session: TRACE

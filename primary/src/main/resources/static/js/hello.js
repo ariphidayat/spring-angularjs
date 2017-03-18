@@ -78,7 +78,15 @@ angular.module('hello', [ 'ngRoute' ])
 
     .controller('home', function($http) {
         var self = this;
-        $http.get('http://localhost:8081/hello/').then(function (response) {
-            self.greeting = response.data;
-    })
-});
+        $http.get('token').then(function(response) {
+            $http({
+                url : 'http://localhost:8081/hello',
+                method : 'GET',
+                headers : {
+                    'X-Auth-Token' : response.data.token
+                }
+            }).then(function(response) {
+                self.greeting = response.data;
+            });
+        })
+    });

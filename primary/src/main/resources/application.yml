@@ -2,6 +2,10 @@ security:
   user:
     password: arip
 
+spring:
+  session:
+    store-type: redis
+
 logging:
   level:
     org.springframework.security: DEBUG
