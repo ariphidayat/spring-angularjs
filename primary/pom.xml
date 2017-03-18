@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.arip</groupId>
-	<artifactId>spring-angularjs</artifactId>
+	<artifactId>primary</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-angularjs</name>
-	<description>Demo project for Spring Boot</description>
+	<name>primary</name>
+	<description>Primary Application</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
