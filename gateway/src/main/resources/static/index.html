@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gateway</title>
+    <link rel="stylesheet" href="css/lib.css">
+    <style>
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-app="gateway" ng-controller="navigation as nav" ng-cloak class="ng-cloak">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Application</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-show="nav.authenticated"><a href="/primary/">Go to Primary</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right"></li>
+                    <li ng-show="nav.authenticated"><a href="#/" class="navbar-link">Signed in as {{nav.user}}</a></li>
+                    <li ng-show="nav.authenticated"><a href="" ng-click="nav.logout()" class="navbar-link">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="alert alert-danger" ng-show="nav.error">
+            There was a problem logging in. Please try again.
+        </div>
+    </div>
+
+    <div class="container">
+        <h4 ng-show="nav.authenticated">Welcome {{nav.user}} to </h4>
+        <h3>Multiple Spring Boot Application and a Gateway</h3>
+        <p>All about access decisions and employs multiple Spring Boot Application behind the same proxy (gateway).</p>
+    </div>
+
+    <div class="container" ng-show="!nav.authenticated">
+        <form ng-submit="nav.login()" role="form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input ng-model="nav.credentials.username" type="text" class="form-control" id="username" name="username"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input ng-model="nav.credentials.password" type="password" class="form-control" id="password" name="password"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="js/lib.js"></script>
+    <script src="js/gateway.js"></script>
+
+</body>
+</html>

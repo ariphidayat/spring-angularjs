@@ -1,29 +1,9 @@
-security:
-  user:
-    name: arip
-    password: password
-  oauth2:
-      client:
-        accessTokenUri: http://localhost:9000/uaa/oauth/token
-        userAuthorizationUri: http://localhost:9000/uaa/oauth/authorize
-        clientId: arip
-        clientSecret: aripsecret
-      resource:
-        userInfoUri: http://localhost:9000/uaa/user
+server:
+  port: 8081
 
 spring:
   session:
     store-type: redis
-
-zuul:
-  routes:
-    resource:
-      path: /resource/**
-      url: http://localhost:8081
-      sensitive-headers:
-    user:
-      path: /user/**
-      url: http://localhost:9000/uaa/user
 
 logging:
   level:

@@ -11,6 +11,7 @@
     <name>Spring and AngularJS Application</name>
 
     <modules>
+        <module>gateway</module>
         <module>primary</module>
         <module>resource</module>
     </modules>

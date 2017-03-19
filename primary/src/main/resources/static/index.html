@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Spring Boot and AngularJS</title>
-    <link rel="stylesheet" href="css/app.css">
+    <title>Primary</title>
+    <link rel="stylesheet" href="css/lib.css">
     <style>
         [ng\:cloak], [ng-cloak], .ng-cloak {
             display: none !important;
         }
     </style>
 </head>
-<body ng-app="hello" ng-cloak class="ng-cloak">
+<body ng-app="primary" ng-controller="home as home" ng-cloak class="ng-cloak">
 
-    <nav ng-controller="navigation as nav" class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -21,24 +21,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/">Spring and AngularJS</a>
+                <a class="navbar-brand" href="#/">Application</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li ng-show="nav.authenticated"><a href="#">Primary</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right"></li>
-                    <li ng-show="!authenticated"><a href="login">Login</a></li>
-                    <li ng-show="authenticated"><a href="" ng-click="nav.logout()">Logout</a></li>
+                    <li ng-show="home.authenticated"><a href="#/" class="navbar-link">Signed in as {{home.user}}</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div ng-view class="container"></div>
+    <div class="container">
+        <h1>Message</h1>
+        <div ng-show="home.authenticated">
+            <p>The ID is {{home.greeting.id}}</p>
+            <p>The content is {{home.greeting.content}}</p>
+        </div>
+        <div ng-show="!home.authenticated">
+            <p>Login to see your greeting</p>
+        </div>
+    </div>
 
-    <script src="js/app.js"></script>
-    <script src="js/hello.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/primary.js"></script>
 
 </body>
 </html>

@@ -1,11 +1,13 @@
-server :
-  address : 127.0.0.1
-  port : 8081
+server:
+  address: 127.0.0.1
+  port: 8082
 
 security:
-  oauth2:
-    resource:
-      userInfoUri: http://localhost:9000/uaa/user
+  sessions: NEVER
+
+spring:
+  session:
+    store-type: redis
 
 logging:
   level:
