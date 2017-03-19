@@ -1,0 +1,20 @@
+server:
+  port: 9000
+  contextPath: /uaa
+
+security:
+  user:
+    password: password
+  sessions: if_required
+  oauth2:
+    client:
+      clientId: arip
+      clientSecret: aripsecret
+      authorized-grant-types: authorization_code, refresh_token, password
+      scope: openid
+      accessTokenValiditySeconds: 10
+
+logging:
+  level:
+    org.springframework:
+    security: DEBUG
