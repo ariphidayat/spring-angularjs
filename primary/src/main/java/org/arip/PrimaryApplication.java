@@ -14,10 +14,10 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 @EnableOAuth2Sso
 @EnableZuulProxy
 @SpringBootApplication
-public class SpringAngularjsApplication {
+public class PrimaryApplication {
 
     public static void main(String[] args) {
-		SpringApplication.run(SpringAngularjsApplication.class, args);
+		SpringApplication.run(PrimaryApplication.class, args);
 	}
 
 	@Configuration
