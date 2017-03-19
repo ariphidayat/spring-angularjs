@@ -3,11 +3,9 @@ server :
   port : 8081
 
 security:
-  sessions: NEVER
-
-spring:
-  session:
-    store-type: redis
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9000/uaa/user
 
 logging:
   level:

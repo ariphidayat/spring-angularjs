@@ -12,7 +12,7 @@ security:
       clientSecret: aripsecret
       authorized-grant-types: authorization_code, refresh_token, password
       scope: openid
-      accessTokenValiditySeconds: 10
+      accessTokenValiditySeconds: 3600
 
 logging:
   level:
