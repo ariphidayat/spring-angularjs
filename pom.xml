@@ -13,6 +13,7 @@
     <modules>
         <module>gateway</module>
         <module>primary</module>
+        <module>admin</module>
         <module>resource</module>
     </modules>
 

@@ -6,13 +6,9 @@ zuul:
     resource:
       url: http://localhost:8082
       sensitive-headers:
-
-security:
-  user:
-    name: arip
-    password: password
-    role: USER, ADMIN, READER, WRITER, ACCTUATOR
-  sessions: ALWAYS
+    admin:
+      url: http://localhost:8083
+      sensitive-headers:
 
 spring:
   session:
