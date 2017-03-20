@@ -4,11 +4,11 @@
 <form ng-submit="controller.login()" role="form">
     <div class="form-group">
         <label for="username">Username</label>
-        <input ng-model="controller.credentials.username" id="username" name="username" class="form-controller">
+        <input ng-model="controller.credentials.username" type="text" id="username" name="username" class="form-control"/>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input ng-model="controller.credentials.password" id="password" name="password" type="password" class="form-controller">
+        <input ng-model="controller.credentials.password" type="password" id="password" name="password" class="form-control"/>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
